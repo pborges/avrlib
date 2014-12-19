@@ -1,8 +1,6 @@
 PROGRAM = main
 
-LIBS = 	$(OUT)/digitalio.o \
-		$(OUT)/usart.o \
-		$(OUT)/i2c.o
+LIBS = 	$(OUT)/digitalio.o 
 
 F_CPU = 16000000
 MMCU = atmega328p
@@ -16,8 +14,6 @@ all: $(OUT) libs $(PROGRAM).compile $(PROGRAM).link $(PROGRAM).lst $(PROGRAM).he
 
 libs:
 	avr-g++ $(CFLAGS) -c $(LIB)/digitalio.cpp -o $(OUT)/digitalio.o
-	avr-g++ $(CFLAGS) -c $(LIB)/usart.cpp -o $(OUT)/usart.o
-	avr-g++ $(CFLAGS) -c $(LIB)/i2c.cpp -o $(OUT)/i2c.o
 
 $(PROGRAM).compile:
 	avr-g++ $(CFLAGS) -c $(PROGRAM).cpp -o $(OUT)/$(PROGRAM).o

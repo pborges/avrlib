@@ -13,7 +13,7 @@ void DigitalIO::setHigh() {
 void DigitalIO::setLow() {
 	*m_port &= ~(1 << m_mask);
 }
-void DigitalIO::toggleState() {
+void DigitalIO::toggle() {
 	*m_port ^= m_mask;
 }
 

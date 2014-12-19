@@ -18,7 +18,7 @@ public:
 	void setOutput();
 	void setInput();
 
-	void toggleState();
+	void toggle();
 
 	bool read();
 };
