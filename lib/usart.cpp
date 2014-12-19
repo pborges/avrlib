@@ -11,10 +11,17 @@ USART::USART(uint16_t baud) {
 	/* Set frame format: 8data, 2stop bit */
 	UCSR0C = (1<<USBS0)|(3<<UCSZ00);
 }
-void USART::print(const char *data) {
-	for(uint16_t i=0;i<strlen(data);i++){
+void USART::write(const char *data, uint16_t len) {
+	for(uint16_t i=0;i<len;i++){
 		this->printc(data[i]);
 	}
+}
+
+void USART::print(const char *data) {
+	this->write(data,strlen(data));
+}
+void USART::print(char data) {
+	this->printc(data);
 }
 void USART::println(const char *data) {
 	this->print(data);
