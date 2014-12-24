@@ -1,5 +1,5 @@
 #include <avr/io.h>
-#include "digitalio.h"
+#include "../lib/digitalio.h"
 
 DigitalIO d0(&PORTD,&PIND,&DDRD,PD0);
 DigitalIO d1(&PORTD,&PIND,&DDRD,PD1);
