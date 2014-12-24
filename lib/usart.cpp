@@ -1,6 +1,11 @@
 #include "usart.h"
 
+USART::USART(){}
+
 USART::USART(uint16_t baud) {
+	init(baud);
+}
+void USART::init(uint16_t baud) {
 	m_prescale = (((F_CPU / (baud * 16UL))) - 1);
 
 	/*Set baud rate */
@@ -33,6 +38,21 @@ void USART::printc(char c) {
 	while ( !( UCSR0A & (1<<UDRE0)) );
 	/* Put data into buffer, sends the data */
 	UDR0 = c;
+}
+void USART::print(int data, uint8_t radix) {
+	char str[32]; // this could cause a buffer overflow on a large number in BIN mode
+	uint8_t i = 0;
+	ltoa(data,str,radix);
+	while (str[i]) {
+		str[i] = toupper(str[i]);
+		i++;
+	}
+	this->print(str);
+}
+void USART::println(int data, uint8_t radix) {
+	this->print(data,radix);
+	this->printc(0x0D);
+	this->printc(0x0A);
 }
 void USART::print(long data, uint8_t radix) {
 	char str[32]; // this could cause a buffer overflow on a large number in BIN mode
