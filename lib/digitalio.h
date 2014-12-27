@@ -28,11 +28,10 @@ public:
 
 	void setOutput();
 	void setInput();
-	void setInputPullup();
 
 	void toggle();
 
-	bool read();
+	uint8_t read();
 };
 
 #endif

@@ -29,6 +29,12 @@ public:
 	void println(long data, uint8_t radix=DEC);
 	void print(long data, uint8_t radix=DEC);
 
+	void println(double data, uint8_t digits = 2);
+	void print(double data, uint8_t digits = 2);
+
+	void println(unsigned long data, uint8_t radix=DEC);
+	void print(unsigned long data, uint8_t radix=DEC);
+
 	void println(int data, uint8_t radix=DEC);
 	void print(int data, uint8_t radix=DEC);
 

@@ -39,6 +39,44 @@ void USART::printc(char c) {
 	/* Put data into buffer, sends the data */
 	UDR0 = c;
 }
+void USART::print(double data, uint8_t digits) {
+	// Handle negative numbers
+	if (data < 0.0)
+	{
+		print('-');
+		data = -data;
+	}
+
+	// Round correctly so that print(1.999, 2) prints as "2.00"
+	double rounding = 0.5;
+	for (uint8_t i=0; i<digits; ++i)
+	rounding /= 10.0;
+	
+	data += rounding;
+
+	// Extract the integer part of the data and print it
+	unsigned long int_part = (unsigned long)data;
+	double remainder = data - (double)int_part;
+	print(int_part);
+
+	// Print the decimal point, but only if there are digits beyond
+	if (digits > 0) {
+		print("."); 
+	}
+
+	// Extract digits from the remainder one at a time
+	while (digits-- > 0) {
+		remainder *= 10.0;
+		int toPrint = int(remainder);
+		print(toPrint);
+		remainder -= toPrint; 
+	} 
+}
+void USART::println(double data, uint8_t digits) {
+	this->print(data, digits);
+	this->printc(0x0D);
+	this->printc(0x0A);
+}
 void USART::print(int data, uint8_t radix) {
 	char str[32]; // this could cause a buffer overflow on a large number in BIN mode
 	uint8_t i = 0;
@@ -69,6 +107,23 @@ void USART::println(long data, uint8_t radix) {
 	this->printc(0x0D);
 	this->printc(0x0A);
 }
+
+void USART::print(unsigned long data, uint8_t radix) {
+	char str[32]; // this could cause a buffer overflow on a large number in BIN mode
+	uint8_t i = 0;
+	ltoa(data,str,radix);
+	while (str[i]) {
+		str[i] = toupper(str[i]);
+		i++;
+	}
+	this->print(str);
+}
+void USART::println(unsigned long data, uint8_t radix) {
+	this->print(data,radix);
+	this->printc(0x0D);
+	this->printc(0x0A);
+}
+
 void USART::println(char data) {
 	this->printc(data);
 	this->printc(0x0D);

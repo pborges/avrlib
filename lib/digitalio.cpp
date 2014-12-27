@@ -1,4 +1,8 @@
 #include "digitalio.h"
+#include "usart.h"
+extern USART *usart;
+
+
 DigitalIO::DigitalIO(){}
 DigitalIO::DigitalIO(volatile uint8_t* port, volatile uint8_t* pin, volatile uint8_t* ddr, uint8_t mask) {
 	m_port = port;
@@ -36,12 +40,8 @@ void DigitalIO::toggle() {
 
 void DigitalIO::setInput() {
 	disablePwm();
+	*m_port |= (1 << m_mask);
 	*m_ddr &= ~(1 << m_mask);
-}
-
-void DigitalIO::setInputPullup() {
-	this->setInput();
-	this->setHigh();
 }
 
 void DigitalIO::setOutput() {
@@ -49,8 +49,9 @@ void DigitalIO::setOutput() {
 	*m_ddr |= (1 << m_mask);
 }
 
-bool DigitalIO::read() {
-	return ((*m_pin & m_mask) << m_mask) > 0;
+uint8_t DigitalIO::read() {
+	if (*m_pin & (1 << m_mask)) return HIGH;
+	return LOW;
 }
 
 void DigitalIO::disablePwm(){
