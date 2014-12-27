@@ -1,7 +1,7 @@
-#include "dht22.h"
+// Ported by Paulo Borges 
+// from Rob Tillaart @ http://arduino.cc/playground/Main/DHTLib
 
-#include "../lib/usart.h"
-extern USART *usart;
+#include "dht22.h"
 
 DHT22::DHT22(Cron *cron, DigitalIO *pin) {
 	m_cron = cron;

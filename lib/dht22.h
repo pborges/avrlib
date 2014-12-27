@@ -1,3 +1,6 @@
+// Ported by Paulo Borges 
+// from Rob Tillaart @ http://arduino.cc/playground/Main/DHTLib
+
 #ifndef _DHT22_H__
 #define _DHT22_H__
 
