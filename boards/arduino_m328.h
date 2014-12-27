@@ -1,21 +1,21 @@
 #include <avr/io.h>
 #include "../lib/digitalio.h"
 
-DigitalIO d0(&PORTD,&PIND,&DDRD,PD0);
-DigitalIO d1(&PORTD,&PIND,&DDRD,PD1);
-DigitalIO d2(&PORTD,&PIND,&DDRD,PD2);
-DigitalIO d3(&PORTD,&PIND,&DDRD,PD3,&TCCR2A,COM2B1);
-DigitalIO d4(&PORTD,&PIND,&DDRD,PD4);
-DigitalIO d5(&PORTD,&PIND,&DDRD,PD5,&TCCR1A,COM1A1);
-DigitalIO d6(&PORTD,&PIND,&DDRD,PD6);
-DigitalIO d7(&PORTD,&PIND,&DDRD,PD7);
-DigitalIO d8(&PORTB,&PINB,&DDRB,PB0);
-DigitalIO d9(&PORTB,&PINB,&DDRB,PB1,&TCCR1A,COM1A1);
-DigitalIO d10(&PORTB,&PINB,&DDRB,PB2,&TCCR1A,COM1B1);
-DigitalIO d11(&PORTB,&PINB,&DDRB,PB3,&TCCR2A,COM2A1);
-DigitalIO d12(&PORTB,&PINB,&DDRB,PB4);
-DigitalIO d13(&PORTB,&PINB,&DDRB,PB5);
-DigitalIO d14(&PORTC,&PINC,&DDRC,PC0);
-DigitalIO d15(&PORTC,&PINC,&DDRC,PC1);
-DigitalIO d16(&PORTC,&PINC,&DDRC,PC2);
-DigitalIO d17(&PORTC,&PINC,&DDRC,PC3);
+DigitalIO *d0 = new DigitalIO(&PORTD,&PIND,&DDRD,PD0);
+DigitalIO *d1 = new DigitalIO(&PORTD,&PIND,&DDRD,PD1);
+DigitalIO *d2 = new DigitalIO(&PORTD,&PIND,&DDRD,PD2);
+DigitalIO *d3 = new DigitalIO(&PORTD,&PIND,&DDRD,PD3,&TCCR2A,COM2B1);
+DigitalIO *d4 = new DigitalIO(&PORTD,&PIND,&DDRD,PD4);
+DigitalIO *d5 = new DigitalIO(&PORTD,&PIND,&DDRD,PD5,&TCCR1A,COM1A1);
+DigitalIO *d6 = new DigitalIO(&PORTD,&PIND,&DDRD,PD6);
+DigitalIO *d7 = new DigitalIO(&PORTD,&PIND,&DDRD,PD7);
+DigitalIO *d8 = new DigitalIO(&PORTB,&PINB,&DDRB,PB0);
+DigitalIO *d9 = new DigitalIO(&PORTB,&PINB,&DDRB,PB1,&TCCR1A,COM1A1);
+DigitalIO *d10 = new DigitalIO(&PORTB,&PINB,&DDRB,PB2,&TCCR1A,COM1B1);
+DigitalIO *d11 = new DigitalIO(&PORTB,&PINB,&DDRB,PB3,&TCCR2A,COM2A1);
+DigitalIO *d12 = new DigitalIO(&PORTB,&PINB,&DDRB,PB4);
+DigitalIO *d13 = new DigitalIO(&PORTB,&PINB,&DDRB,PB5);
+DigitalIO *d14 = new DigitalIO(&PORTC,&PINC,&DDRC,PC0);
+DigitalIO *d15 = new DigitalIO(&PORTC,&PINC,&DDRC,PC1);
+DigitalIO *d16 = new DigitalIO(&PORTC,&PINC,&DDRC,PC2);
+DigitalIO *d17 = new DigitalIO(&PORTC,&PINC,&DDRC,PC3);
