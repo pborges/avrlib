@@ -98,10 +98,6 @@ void DHT22::readSensor() {
 		do {
 			age = (unsigned long)(m_cron->micros() - startTime);
 			if ( age > 90 ) {
-				// usart->print("AGE: ");
-				// usart->print(i);
-				// usart->print(" ");
-				// usart->println(age);
 				error = ERROR_TIMEOUT;
 				return;
 			}
