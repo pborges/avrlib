@@ -1,7 +1,4 @@
 #include "digitalio.h"
-#include "usart.h"
-extern USART *usart;
-
 
 DigitalIO::DigitalIO(){}
 DigitalIO::DigitalIO(volatile uint8_t* port, volatile uint8_t* pin, volatile uint8_t* ddr, uint8_t mask) {
