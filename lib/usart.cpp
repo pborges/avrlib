@@ -2,10 +2,10 @@
 
 USART::USART(){}
 
-USART::USART(uint16_t baud) {
+USART::USART(unsigned long baud) {
 	init(baud);
 }
-void USART::init(uint16_t baud) {
+void USART::init(unsigned long baud) {
 	m_prescale = (((F_CPU / (baud * 16UL))) - 1);
 
 	/*Set baud rate */

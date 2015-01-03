@@ -12,11 +12,11 @@
 
 class USART {
 private:
-	uint16_t m_prescale;
-	void init(uint16_t baud);
+	unsigned long m_prescale;
+	void init(unsigned long baud);
 public:
 	USART();
-	USART(uint16_t baud);
+	USART(unsigned long baud);
 
 	void write(const char *data, uint16_t len);
 

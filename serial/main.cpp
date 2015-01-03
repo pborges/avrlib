@@ -2,7 +2,7 @@
 #include <util/delay.h>
 #include "../lib/usart.h"
 
-USART usart(9600);
+USART usart(57600);
 int main() {
 	while(1){
 		if(usart.available()) {
