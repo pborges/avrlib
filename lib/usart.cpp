@@ -28,10 +28,13 @@ void USART::print(const char *data) {
 void USART::print(char data) {
 	this->printc(data);
 }
-void USART::println(const char *data) {
-	this->print(data);
+void USART::println() {
 	this->printc(0x0D);
 	this->printc(0x0A);
+}
+void USART::println(const char *data) {
+	this->print(data);
+	this->println();
 }
 void USART::printc(char c) {
 	/* Wait for empty transmit buffer */

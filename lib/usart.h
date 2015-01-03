@@ -26,6 +26,8 @@ public:
 	void print(char data);
 	void printc(char c);
 
+	void println();
+
 	void println(long data, uint8_t radix=DEC);
 	void print(long data, uint8_t radix=DEC);
 

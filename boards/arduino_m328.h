@@ -1,5 +1,5 @@
 #include <avr/io.h>
-#include "../lib/digitalio.h"
+#include "../lib/bootstrap.h"
 
 DigitalIO *d0 = new DigitalIO(&PORTD,&PIND,&DDRD,PD0);
 DigitalIO *d1 = new DigitalIO(&PORTD,&PIND,&DDRD,PD1);
