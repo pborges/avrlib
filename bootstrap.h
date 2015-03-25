@@ -2,7 +2,7 @@
 #define __AVR_BOOTSTRAP__
 
 #include <stdlib.h>
-#include "../lib/digitalio.h"
+#include "digitalio.h"
 
 typedef unsigned int size_t;
 

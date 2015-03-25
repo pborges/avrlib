@@ -1,6 +1,5 @@
 #include <avr/io.h>
-#include <util/delay.h>
-#include "../lib/usart.h"
+#include "../../usart.h"
 
 USART usart(57600);
 int main() {

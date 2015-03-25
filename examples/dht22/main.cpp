@@ -1,10 +1,7 @@
 #include <avr/io.h>
-#include <util/delay.h>
-#include <avr/interrupt.h>
-#include "../lib/bootstrap.h"
-#include "../lib/dht22.h"
-#include "../lib/usart.h"
-#include "../lib/cron.h"
+#include "../../bootstrap.h"
+#include "../../dht22.h"
+#include "../../usart.h"
 
 
 Cron *cron = new Cron();
