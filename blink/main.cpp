@@ -1,14 +1,12 @@
-#include <avr/io.h>
 #include <util/delay.h>
 #include "../lib/digitalio.h"
 
-DigitalIO led(&PORTB,&PINB,&DDRB,PB2);
+DigitalIO d13(&PORTB, &PINB, &DDRB, PB5);
 
 int main() {
-	led.setOutput();
 
-	while(1) {
-		led.toggle();
-		_delay_ms(1000);
-	}	
+    while (1) {
+        d13.toggle();
+        _delay_ms(250);
+    }
 }
