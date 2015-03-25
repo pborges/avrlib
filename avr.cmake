@@ -30,7 +30,10 @@ function(add_avr_executable EXECUTABLE_NAME MMCU F_CPU AVR_PROGRAMMER)
             COMPILE_FLAGS "${common_opts}"
             LINK_FLAGS "${common_opts} -Wl,-Map,${map_file}"
     )
-
+    add_custom_command(TARGET ${elf_file} POST_BUILD
+        COMMAND
+            ${AVRSIZE} ${elf_file}
+    )
     add_custom_target(${hex_file}
         ${CMAKE_OBJCOPY} -j .text -j .data -O ihex ${elf_file} ${hex_file}
         DEPENDS ${elf_file}
