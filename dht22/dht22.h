@@ -4,8 +4,8 @@
 #ifndef _DHT22_H__
 #define _DHT22_H__
 
-#include "digitalio.h"
-#include "cron.h"
+#include "../io/digitalio.h"
+#include "../cron/cron.h"
 
 class DHT22 {
 public:
@@ -15,7 +15,7 @@ public:
 		ERROR_CHECKSUM
 	} DHT_ERROR_t;
 
-	DHT22(Cron *cron, DigitalIO *pin);
+	DHT22(Cron &cron, DigitalIO &pin);
 
 	float getTemperature();
 	float getHumidity();
@@ -42,8 +42,8 @@ protected:
 	float temperature;
 	float humidity;
 
-	DigitalIO *m_pin;
-	Cron *m_cron;
+	DigitalIO pin_;
+	Cron cron_;
 
 private:
 	DHT_ERROR_t error;

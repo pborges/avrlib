@@ -5,7 +5,7 @@
 #ifndef _AVR_SPI_H_
 #define _AVR_SPI_H_
 
-#include "digitalio.h"
+#include "../io/digitalio.h"
 
 #define LSBFIRST 1
 #define MSBFIRST 0

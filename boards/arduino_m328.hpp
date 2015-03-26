@@ -1,5 +1,5 @@
-#include "../lib/digitalio.h"
-#include "../lib/spi.h"
+#include "../io/digitalio.h"
+#include "../spi/spi.h"
 
 DigitalIO d0(&PORTD,&PIND,&DDRD,PD0);
 DigitalIO d1(&PORTD,&PIND,&DDRD,PD1);

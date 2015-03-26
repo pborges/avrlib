@@ -1,5 +1,5 @@
 #include <util/delay.h>
-#include "../../digitalio.h"
+#include "../../io/digitalio.h"
 
 DigitalIO d13(&PORTB, &PINB, &DDRB, PB5);
 

@@ -1,5 +1,5 @@
 #include <avr/io.h>
-#include "../../usart.h"
+#include "../../usart/usart.h"
 
 USART usart(57600);
 int main() {

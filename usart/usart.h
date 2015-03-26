@@ -12,7 +12,7 @@
 
 class USART {
 private:
-	unsigned long m_prescale;
+	long long int prescale_;
 	void init(unsigned long baud);
 public:
 	USART();
