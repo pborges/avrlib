@@ -1,4 +1,5 @@
 #include "../lib/digitalio.h"
+#include "../lib/spi.h"
 
 DigitalIO d0(&PORTD,&PIND,&DDRD,PD0);
 DigitalIO d1(&PORTD,&PIND,&DDRD,PD1);
@@ -18,3 +19,5 @@ DigitalIO d14(&PORTC,&PINC,&DDRC,PC0);
 DigitalIO d15(&PORTC,&PINC,&DDRC,PC1);
 DigitalIO d16(&PORTC,&PINC,&DDRC,PC2);
 DigitalIO d17(&PORTC,&PINC,&DDRC,PC3);
+
+SPI spi(d13,d12,d11,d10);
