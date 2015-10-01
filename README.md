@@ -8,4 +8,6 @@ Want more Objects?
 
 Give this library a try... Later because it's still in its infancy.
 
-Compiles with make!
+Compiles with ~~make~~ cmake!
+
+To be used with https://www.jetbrains.com/clion/
